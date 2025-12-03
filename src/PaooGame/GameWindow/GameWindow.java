@@ -1,0 +1,56 @@
+package PaooGame.GameWindow;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class GameWindow
+{
+    GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+    private JFrame  wndFrame;
+    private String  wndTitle;
+    private int  wndWidth;
+    private int  wndHeight;
+    private Canvas  canvas;
+
+    public GameWindow(){
+        DisplayMode dm = gd.getDisplayMode();
+        wndWidth = dm.getWidth();
+        wndHeight = dm.getHeight();
+        wndFrame    = null;
+    }
+
+    public void BuildGameWindow()
+    {
+        if(wndFrame != null)
+        {
+            return;
+        }
+        wndFrame = new JFrame(wndTitle);
+        wndFrame.setUndecorated(true);
+        wndFrame.setSize(wndWidth, wndHeight);
+        wndFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        wndFrame.setResizable(false);
+        wndFrame.setLocationRelativeTo(null);
+        wndFrame.setVisible(true);
+        canvas = new Canvas();
+        canvas.setPreferredSize(new Dimension(wndWidth, wndHeight));
+        canvas.setMaximumSize(new Dimension(wndWidth, wndHeight));
+        canvas.setMinimumSize(new Dimension(wndWidth, wndHeight));
+        canvas.requestFocus();
+        wndFrame.add(canvas);
+        wndFrame.pack();
+        gd.setFullScreenWindow(wndFrame);
+    }
+
+    public int GetWndWidth()
+    {
+        return wndWidth;
+    }
+    public int GetWndHeight()
+    {
+        return wndHeight;
+    }
+    public Canvas GetCanvas() {
+        return canvas;
+    }
+}
