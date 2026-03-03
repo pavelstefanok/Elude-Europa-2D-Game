@@ -1,6 +1,6 @@
 #  Elude Europa
 
-**Elude Europa** is a **2D Action RPG Shooter** The game is set on Jupiter's moon, Europa, where the player must fight through procedurally generated levels to escape alien captivity.
+**Elude Europa** is a **2D Action RPG Shooter** set on Jupiter's moon, Europa, where the player must fight through procedurally generated levels to escape alien captivity.
 
 ##  Story & Objective
 
